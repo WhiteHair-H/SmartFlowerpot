@@ -314,82 +314,78 @@ input:checked:focus + .switch-left + .switch-right {
 
 /* 게이지 스타일 */
 
-@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500);
-.slidecontainer {
-  width: 100%;
-  animation: opacity 1s ease 1;
-}
-
-@keyframes opacity {
-  0% {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-.slider {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 500px;
-  height: 7px;
-  background: #d3d3d3;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: 0.2s;
-  transition: opacity 0.2s;
-  border-radius: 20px;
-  margin: auto;
-  display: block;
-}
-
-.slider:hover {
-  opacity: 1;
-}
-
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 25px;
-  height: 25px;
-  background: #007eff;
-  cursor: pointer;
-  border-radius: 50%;
-  transition: all 200ms ease-in-out;
-}
-
-.slider:active::-webkit-slider-thumb {
-  transform: scale(1.3);
-}
-
-.slider:active::-moz-slider-thumb {
-  transform: scale(1.3);
-}
-
-.slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
-  background: #007eff;
-  cursor: pointer;
-  border-radius: 50%;
-}
-
-html, body {
-  height: 100%;
-}
-
-body {
-  margin: auto;
-  display: flex;
-  align-items: center;
-}
-
-h2 {
-  font-family: Roboto;
-  font-size: 34pt;
-  font-weight: 400;
+#rangeValue {
+  position: relative;
+  display: contents;
   text-align: center;
-  margin: 0;
+  font-size: 25px;
+  color: #999;
+  font-weight: 400;
+}
+.range {
+  width: 250px;
+  height: 15px;
+  margin-right: 10px;
+  -webkit-appearance: none;
+  background: rgb(211, 209, 209);
+  outline: none;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  border: 4px solid rgb(255, 255, 255);
+  box-shadow: -407px 0 0 400px #0dca13;
+}
+
+/* 토글 버튼 */
+.toggle-control {
+  display: block;
+  position: relative;
+  padding-left: 100px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.toggle-control input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.toggle-control input:checked ~ .control {
+  background-color: dodgerblue;
+}
+.toggle-control input:checked ~ .control:after {
+  left: 55px;
+}
+.toggle-control .control {
+  position: absolute;
+  top: 0;
+  height: 50px;
+  width: 100px;
+  border-radius: 25px;
+  background-color: darkgray;
+  transition: background-color 0.15s ease-in;
+}
+.toggle-control .control:after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 25px;
+  background: white;
+  transition: left 0.15s ease-in;
 }
