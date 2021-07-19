@@ -6,87 +6,120 @@
     <title> ControlPage </title>
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script type="text/javascript">
+      function rangeSlide(value) {document.getElementById('rangeValue').innerHTML = value;}
+    </script>
    </head>
 
           <!-- Designing by CodingLab -->
 
+          <!-- 디스플레이 시작 -->
 <body>
   <div class="main_div">
     <div class="ControlPage" style="text-align: center; ">Display</div>
     <div>
       <form action="" style="padding-top: 5px;">
         <div>
+          <!-- 식물 사진 -->
           <img src="images/plant.jpg" alt="plant" height="340" style="padding-top: 30px; padding-left: 100px;" >
-          <div style="float: right; ">
+          <!-- 온도, 습도 , 조도, 토양습도  버튼 시작-->
+          <div style="float: right; margin-top: 40px;">
             <div class="mid">
               <img src="images/온도.png" alt="" height="50px" style="margin-right: 30px;">
               <p style="margin-right: 60px;">현재온도 : 22℃</p>
               <p style="margin-left: 60px; font-weight: bolder;">LED</p>
-              <label class="rocker rocker-small">
-                <input type="checkbox">
-                <span class="switch-left">ON</span>
-                <span class="switch-right">OFF</span>
+              <input type="checkbox" id="switch1" name="switch1" class="input__on-off">
+              <label for="switch1" class="label__on-off">
+                <span class="marble"></span>
+                <span class="on">on</span>
+                <span class="off">off</span>
               </label>
             </div>
             <div class="mid">
               <img src="images/습도.png" alt="" height="50px" style="margin-right: 30px;">
               <p style="margin-right: 40px;">현재습도 : 60%</p>
               <p style="margin-left: 60px; font-weight: bolder;">Fan In</p>
-              <label class="rocker rocker-small">
-                <input type="checkbox">
-                <span class="switch-left">ON</span>
-                <span class="switch-right">OFF</span>
+              <input type="checkbox" id="switch2" name="switch2" class="input__on-off">
+              <label for="switch2" class="label__on-off">
+                <span class="marble"></span>
+                <span class="on">on</span>
+                <span class="off">off</span>
               </label>
             </div>
             <div class="mid">
               <img src="images/조도.png" alt="" height="50px" style="margin-right: 30px;">
               <p style="margin-right: 30px;">현재조도 : 20lx</p>
               <p style="margin-left: 60px; font-weight: bolder;">Fan Out</p>
-              <label class="rocker rocker-small">
-                <input type="checkbox">
-                <span class="switch-left">ON</span>
-                <span class="switch-right">OFF</span>
+              <input type="checkbox" id="switch3" name="switch3" class="input__on-off">
+              <label for="switch3" class="label__on-off">
+                <span class="marble"></span>
+                <span class="on">on</span>
+                <span class="off">off</span>
               </label>
             </div>
             <div class="mid">
               <img src="images/토양습도.png" alt="" height="50px" style="margin-right: 30px;">
               <p style="margin-right: 20px;">토양습도 : 20%</p>
               <p style="margin-left: 30px; font-weight: bolder;">Water Pump</p>
-              <label class="rocker rocker-small">
-                <input type="checkbox">
-                <span class="switch-left">ON</span>
-                <span class="switch-right">OFF</span>
+              <input type="checkbox" id="switch4" name="switch4" class="input__on-off">
+              <label for="switch4" class="label__on-off">
+                <span class="marble"></span>
+                <span class="on">on</span>
+                <span class="off">off</span>
               </label>
             </div>
           </div>
+          <!-- 온도, 습도 , 조도, 토양습도  버튼 끝-->
         </div>
       </form>
-      <form action="">
+        <!-- 디스플레이 끝 -->
+      <form>
+        <!-- Settings 시작-->
         <div>
-          <div class="ControlPage" style="text-align: center; ">Setting</div>
-          <div class="mid" style="justify-content: flex-start;">
+          <div class="ControlPage" style="text-align: center; ">Settings</div>
+          <div class="mid" style="justify-content: flex-start; margin-left: 100px;">
+
+            <!-- LED 게이지 -->
             <p style="margin-right: 30px; font-weight: bolder; font-size: 30px;">LED</p>
             <Input class="range" type="range" name "" value="0" min="0" max="100" 
             onChange="rangeSlide(this.value)" onmousemove="rangeSlide(this.value)">
-            <span id="rangeValue" style="position: right;">0</span>
-            <script type="text/javascript">
-              function rangeSlide(value) {document.getElementById('rangeValue').innerHTML = value;}
-            </script>
+            <!-- 게이지 숫자-->
+            <!-- <span id="rangeValue" style="position: absolute;">0</span> -->
+
+            <!-- Fan1 버튼 -->
+            <div style="margin-left: 300px;"></div>
+              <p style="margin-left: 50px; margin-right: 50px; font-weight: bolder; font-size: 30px;">Fan1</p>
+              <input type="checkbox" id="switch5" name="switch5" class="input__on-off">
+              <label for="switch5" class="label__on-off">
+                <span class="marble"></span>
+                <span class="on">on</span>
+                <span class="off">off</span>
+              </label>
+
+            <!-- Fan2 버튼 -->
+            <div style="margin-left: 100px;"></div>
+              <p style="margin-right: 30px; font-weight: bolder; font-size: 30px;">Fan2</p>
+              <input type="checkbox" id="switch6" name="switch6" class="input__on-off">
+              <label for="switch6" class="label__on-off">
+                <span class="marble"></span>
+                <span class="on">on</span>
+                <span class="off">off</span>
+              </label>
+
           </div>
-          <div class="mid" style="justify-content: flex-start; align-items: end;">
+          <div class="mid" style="justify-content: flex-start; margin-left: 100px;">
             <p style="margin-right: 30px; font-weight: bolder; font-size: 30px;">Pump</p>
-            <label class="toggle-control">
-              <input type="checkbox" checked="checked">
-              <span class="control"></span>
+            <input type="checkbox" id="switch7" name="switch7" class="input__on-off">
+            <label for="switch7" class="label__on-off">
+              <span class="marble"></span>
+              <span class="on">on</span>
+              <span class="off">off</span>
             </label>
           </div>
-          
         </div>
-        </div>
+        <!-- Settings 끝-->
       </form>
     </div>
-  </div>
-  <div>
   </div>
 </body>
 </html>

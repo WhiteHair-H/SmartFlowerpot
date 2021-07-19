@@ -1,3 +1,4 @@
+/* 전체적인 스타일 (로그인, 컨트롤 페이지 포함) */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
   margin: 0;
@@ -170,148 +171,6 @@ html {
   padding-top:1em;
 }
 
-
-/* Switch starts here */
-.rocker {
-  display: inline-block;
-  position: relative;
-  /*
-  SIZE OF SWITCH
-  ==============
-  All sizes are in em - therefore
-  changing the font-size here
-  will change the size of the switch.
-  See .rocker-small below as example.
-  */
-  font-size: 2em;
-  font-weight: bold;
-  text-align: center;
-  text-transform: uppercase;
-  color: #888;
-  width: 7em;
-  height: 4em;
-  overflow: hidden;
-  border-bottom: 0.5em solid #eee;
-}
-
-.rocker-small {
-  font-size: 0.75em; /* Sizes the switch */
-  margin: 1em;
-}
-
-.rocker::before {
-  content: "";
-  position: absolute;
-  top: 0.5em;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #999;
-  border: 0.5em solid #eee;
-  border-bottom: 0;
-}
-
-.rocker input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.switch-left,
-.switch-right {
-  cursor: pointer;
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 2.5em;
-  width: 3em;
-  transition: 0.2s;
-}
-
-.switch-left {
-  height: 2.4em;
-  width: 2.75em;
-  left: 0.85em;
-  bottom: 0.4em;
-  background-color: #ddd;
-  transform: rotate(15deg) skewX(15deg);
-}
-
-.switch-right {
-  right: 0.5em;
-  bottom: 0;
-  background-color: #bd5757;
-  color: #fff;
-}
-
-.switch-left::before,
-.switch-right::before {
-  content: "";
-  position: absolute;
-  width: 0.4em;
-  height: 2.45em;
-  bottom: -0.45em;
-  background-color: #ccc;
-  transform: skewY(-65deg);
-}
-
-.switch-left::before {
-  left: -0.4em;
-}
-
-.switch-right::before {
-  right: -0.375em;
-  background-color: transparent;
-  transform: skewY(65deg);
-}
-
-input:checked + .switch-left {
-  background-color: #0084d0;
-  color: #fff;
-  bottom: 0px;
-  left: 0.5em;
-  height: 2.5em;
-  width: 3em;
-  transform: rotate(0deg) skewX(0deg);
-}
-
-input:checked + .switch-left::before {
-  background-color: transparent;
-  width: 3.0833em;
-}
-
-input:checked + .switch-left + .switch-right {
-  background-color: #ddd;
-  color: #888;
-  bottom: 0.4em;
-  right: 0.8em;
-  height: 2.4em;
-  width: 2.75em;
-  transform: rotate(-15deg) skewX(-15deg);
-}
-
-input:checked + .switch-left + .switch-right::before {
-  background-color: #ccc;
-}
-
-/* Keyboard Users */
-input:focus + .switch-left {
-  color: #333;
-}
-
-input:checked:focus + .switch-left {
-  color: #fff;
-}
-
-input:focus + .switch-left + .switch-right {
-  color: #fff;
-}
-
-input:checked:focus + .switch-left + .switch-right {
-  color: #333;
-}
-
 /* 게이지 스타일 */
 
 #rangeValue {
@@ -343,49 +202,65 @@ input:checked:focus + .switch-left + .switch-right {
   box-shadow: -407px 0 0 400px #0dca13;
 }
 
-/* 토글 버튼 */
-.toggle-control {
-  display: block;
-  position: relative;
-  padding-left: 100px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-.toggle-control input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-.toggle-control input:checked ~ .control {
-  background-color: dodgerblue;
-}
-.toggle-control input:checked ~ .control:after {
-  left: 55px;
-}
-.toggle-control .control {
-  position: absolute;
-  top: 0;
-  height: 50px;
-  width: 100px;
-  border-radius: 25px;
-  background-color: darkgray;
-  transition: background-color 0.15s ease-in;
-}
-.toggle-control .control:after {
-  content: "";
-  position: absolute;
-  left: 5px;
-  top: 5px;
-  width: 40px;
-  height: 40px;
-  border-radius: 25px;
-  background: white;
-  transition: left 0.15s ease-in;
-}
+/* 토글 버튼 스타일*/
+input[type="checkbox"] { display: none; } 
+.label__on-off { 
+  overflow: hidden; 
+  position: relative; 
+  display: inline-block;
+  margin-left: 10px;
+  width: 58px; height: 26px; 
+  -webkit-border-radius: 13px; 
+  -moz-border-radius: 13px; 
+  border-radius: 13px; 
+  background-color: #ed4956; 
+  color: #fff; 
+  font-weight: bold; 
+  cursor: pointer; 
+  -webkit-transition: all .3s;
+   -moz-transition: all .3s;
+    -ms-transition: all .3s;
+     -o-transition: all .3s;
+      transition: all .3s; }
+
+.label__on-off > * { 
+  vertical-align: middle;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s; 
+  -ms-transition: all .3s; 
+  -o-transition: all .3s; 
+  transition: all .3s; 
+  font-size: 14px; } 
+
+.label__on-off .marble { 
+  position: absolute; 
+  top: 1px; left: 1px; 
+  display: block; 
+  width: 24px; height: 24px; 
+  background-color: #fff; 
+  -webkit-border-radius: 50%; 
+  -moz-border-radius: 50%; 
+  border-radius: 50%; 
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .3); 
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+   box-shadow: 0 0 10px rgba(0, 0, 0, .3); }
+
+.label__on-off .on { 
+  display: none; 
+  padding-left: 12px; } 
+
+.label__on-off .off { 
+  padding-left: 30px; 
+  line-height: 25px; }
+
+.input__on-off:checked + .label__on-off {
+  background-color: #0bba82; } 
+
+.input__on-off:checked + .label__on-off .on {
+  display: inline-block; }
+
+.input__on-off:checked + .label__on-off .off {
+  display: none; }
+
+.input__on-off:checked + .label__on-off .marble {
+  left: 33px; }
