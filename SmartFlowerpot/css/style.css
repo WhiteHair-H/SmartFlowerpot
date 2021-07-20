@@ -264,3 +264,6 @@ input[type="checkbox"] { display: none; }
 
 .input__on-off:checked + .label__on-off .marble {
   left: 33px; }
+
+/* 회원가입창 */
+
