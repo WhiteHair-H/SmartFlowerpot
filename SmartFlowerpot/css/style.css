@@ -148,11 +148,20 @@ form .option_div{
   background: #a720c5;
 }
 form .sign_up{
+  outline: none;
+  border-radius: 5px;
   text-align: center;
-  margin-top: 25px;
+  font-size: 25px;
+  transition: all 0.3s ease;
+  padding-top: 10px;
+  margin-top: 10px;
 }
 .sign_up a{
-  color: #be2edd;
+  background-color: rgb(140, 201, 48);
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 5px;
 }
 html {
   box-sizing: border-box;
